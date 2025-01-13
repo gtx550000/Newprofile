@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../components/css/popup.css';
 import '../components/css/navbarcss.css'; // Import the CSS file for styles
 
 const Navbar = () => {
@@ -35,12 +36,18 @@ const Navbar = () => {
                   to="/aboutme"
                   className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
                 >
-                  About
+                  about me
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#!">Contact</a>
+                <NavLink
+                  to="/credit"
+                  className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                >
+                  credit
+                </NavLink>
               </li>
+
             </ul>
           </div>
         </div>
@@ -48,13 +55,15 @@ const Navbar = () => {
 
       {/* Hero Section */}
       <section>
+
+      <div className='fade-in'>
         <div
           id="intro"
-          className="bg-image d-flex justify-content-center align-items-center"
+          className="bg-image d-flex justify-content-center align-items-center "
           style={{
             backgroundImage:
               "url('https://images.unsplash.com/photo-1582061575118-93cc82eca33b?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-            height: "100vh",
+            height: "70vh",
           }}
         >
           <div
@@ -64,6 +73,8 @@ const Navbar = () => {
             <h1 className="mb-0 text-white display-1">Internship</h1>
           </div>
         </div>
+     </div>
+
       </section>
     </>
   );
