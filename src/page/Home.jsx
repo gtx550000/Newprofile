@@ -40,7 +40,7 @@ const Home = () => {
       <div className="container px-5">
         <Social />
         <footer class="container">
-              <p class="float-end"><a href="#">Back to top</a>&nbsp;&nbsp;<a href="/aboutme">go to aboutme</a></p>
+              <p class="float-end"><a href="#">Back to top</a>&nbsp;&nbsp;<a href="/#/aboutme">go to aboutme</a></p>
               <p>&copy; 2017–2024 Company, Inc.&middot;</p>
         </footer>
       </div>

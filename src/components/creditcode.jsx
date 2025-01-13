@@ -132,7 +132,7 @@ const ce = () => {
             <div className="container px-5">
        
         <footer class="container">
-              <p class="float-end"><a href="#">Back to top</a>&nbsp;&nbsp;<a href="/aboutme">Back to aboutme</a></p>
+              <p class="float-end"><a href="#">Back to top</a>&nbsp;&nbsp;<a href="/#/aboutme">Back to aboutme</a></p>
               <p>&copy; 2017–2024 Company, Inc.&middot;</p>
         </footer>
       </div>
