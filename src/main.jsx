@@ -5,8 +5,8 @@ import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter basename="/Newprofile">
       <App />
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>
 );
