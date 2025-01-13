@@ -74,7 +74,7 @@ const About = () => {
             <hr className="featurette-divider" />
             <div className="container px-5">
                 <footer class="container">
-                <p class="float-end"><a href="/">Back to Home</a>&nbsp;&nbsp;<a href="/#/credit">go to credit</a></p>
+                <p class="float-end"><a href="/">Back to Home</a>&nbsp;&nbsp;<a href="/credit">go to credit</a></p>
                 <p>&copy; 2017–2024 Company, Inc. &middot; </p>
                 </footer>
             </div>
