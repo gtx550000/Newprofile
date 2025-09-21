@@ -49,7 +49,7 @@ const projectsData = [
     description:
       "Developed a personal portfolio website using React and Bootstrap, enhanced with animations powered by Framer Motion.",
     techStack: ["React", "Bootstrap", "Framer Motion"],
-    githubLink: "https://github.com/yourusername/portfolio-react",
+    githubLink: "https://github.com/gtx550000/Newprofile",
     liveLink: "https://yourportfolio.com",
     image:
       "https://via.placeholder.com/400x250/FFD700/FFFFFF?text=Portfolio+Website",
