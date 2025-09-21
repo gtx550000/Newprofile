@@ -10,17 +10,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg fixed-top navbar-scroll">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">Korn</NavLink>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i className="fas fa-bars"></i>
-          </button>
+         
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">

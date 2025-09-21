@@ -1,0 +1,15 @@
+/* ===== Layout for Education + Projects side-by-side ===== */
+.about-sections{
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* วางข้างกัน */
+  gap: 32px;
+  align-items: start;
+}
+
+/* แท็บเล็ต/มือถือ → ซ้อนเป็นคอลัมน์ */
+@media (max-width: 1024px){
+  .about-sections{ grid-template-columns: 1fr; }
+}

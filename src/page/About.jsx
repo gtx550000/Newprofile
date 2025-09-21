@@ -1,86 +1,162 @@
 import React from "react";
 import Aboutprofile from "../components/aboutmeprofile";
-import ProfilDeil from "../components/profiledetail";
-import MostUsedLanguages from "../components/programming_laguage";
+import { motion } from "framer-motion";
+import { FaGraduationCap, FaGithub } from "react-icons/fa";
+import "../components/css/popup.css";
+import "../components/css/Education.css";
+import "../components/css/Projects.css";
+import "../components/css/fix.css";
 
-import Social from '../components/social_media';
-import '../components/css/popup.css';
+/* ---------- data ---------- */
+const educationData = [
+  {
+    degree: "Bachelor of Science in Computer Science",
+    university: "King Mongkut's University of Technology North Bangkok",
+    year: "2022 - present",
+    details:
+      "Developed web applications with React and Node.js, and conducted automated functional tests using Playwright to identify and resolve issues effectively.",
+  },
+  {
+    degree: "Business Computer",
+    university: "Siba College",
+    year: "2019 - 2021",
+    details: "Experienced in IoT projects with a solid foundation in networking and computer troubleshooting.",
+  },
+];
 
+const projectsData = [
+  {
+    title: "Rent Game Platform (React & Node.js)",
+    description:
+      "Developed a game rental and purchase platform with features including shopping cart, payment system, and an admin dashboard for product and order management.",
+    techStack: ["React", "Node.js", "Postman", "Docker", "MUI"],
+    githubLink: "https://github.com/gtx550000/Reant_game_",
+    liveLink: "https://yourapp.netlify.app/rent",
+    image:
+      "https://via.placeholder.com/400x250/87CEEB/FFFFFF?text=Rent+Platform",
+  },
+  {
+    title: "Chat Bot by n8n (React)",
+    description:
+      "Real-time chat application using n8n for workflow management and automated responses.",
+    techStack: ["React", "N8n", "Supabase"],
+    githubLink: "https://github.com/gtx550000/my-8bit-chatbot",
+    liveLink: "https://yourapp.netlify.app/chat",
+    image: "https://via.placeholder.com/400x250/90EE90/FFFFFF?text=Chat+App",
+  },
+  {
+    title: "Portfolio Website (React)",
+    description:
+      "Developed a personal portfolio website using React and Bootstrap, enhanced with animations powered by Framer Motion.",
+    techStack: ["React", "Bootstrap", "Framer Motion"],
+    githubLink: "https://github.com/yourusername/portfolio-react",
+    liveLink: "https://yourportfolio.com",
+    image:
+      "https://via.placeholder.com/400x250/FFD700/FFFFFF?text=Portfolio+Website",
+  },
+];
+
+/* ---------- motion variants ---------- */
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
+};
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } },
+};
+
+/* ---------- component ---------- */
 const About = () => {
-    const featurette1 = {
-        title: " 1. Website buy game and rent game",
-        subtitle: "",
-        description: "We focus on designing a purchasing website that meets customer needs, with an accessible and user-friendly interface. Our goal is to transform the traditional game-buying experience and ensure that users receive the best possible experience",
-        imgSrc:
-            "https://cdn.xsolla.net/strapi-bucket-prod/medium_How_To_Generate_Game_Sales_From_Your_Online_Store_67bbf56370/medium_How_To_Generate_Game_Sales_From_Your_Online_Store_67bbf56370.png",
-        reverse: false, // Default layout
-        
-    };
+  return (
+    <div className="fade-in">
+      <Aboutprofile />
 
-    const featurette2 = {
-        title: " 2. Website Numerical",
-        subtitle: "",
-        description: "The program is about numerical calculations using mathematical formulas, such as differentiation or integration, and visualizing them as graphs. ",
-        imgSrc:
-            "https://aijourney.so/_next/image?url=https%3A%2F%2Faijourney-store.s3.amazonaws.com%2Ftool-121%2F1713941702254-microsoft-math-solver-3.png&w=3840&q=75",
-        reverse: true, // Default layout
-        
-    };
-        
+      <hr
+        className="featurette-divider"
+        style={{ width: "80%", margin: "20px auto", borderTop: "2px solid" }}
+      />
 
-    return (
-        <div className="fade-in">
-            <div>
-              <Aboutprofile />
-            </div>
+      {/* ⬇️ ใส่ wrapper จัด layout */}
+      <section className="about-sections">
+        {/* Education */}
+        <div className="education-container">
+          <motion.h2 initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
+            Education
+          </motion.h2>
 
-            <hr className="featurette-divider"
-            style={{
-                width: "80%", /* กำหนดความกว้าง */
-                margin: "20px auto", /* จัดให้อยู่กึ่งกลาง */
-                borderTop: "2px solid " /* เส้นสีเทา */
-              }} />
-           
-            <div className="container px-5 py-5">
-                <ProfilDeil data={featurette1} />
-               
-            </div>
-
-            <h className="textcenter">("🥰Websites are developed collaboratively as a team and Example picture.")</h> 
-
-            <hr className="featurette-divider" 
-            style={{
-                width: "80%", /* กำหนดความกว้าง */
-                margin: "20px auto", /* จัดให้อยู่กึ่งกลาง */
-                borderTop: "2px solid " /* เส้นสีเทา */
-              }}/>
-
-            
-            <div className="container px-5 py-5">
-                <ProfilDeil data={featurette2} />
-               
-            </div>
-
-            
-            <h className="textcenter">("🥰Websites are developed collaboratively as a team and Example picture.")</h> 
-
-            
-          
-            {/** 
-            <div className="container px-5 py-5">
-                <MostUsedLanguages/>
-            </div>*/}
-
-            <hr className="featurette-divider" />
-            <div className="container px-5">
-                <footer class="container">
-                <p class="float-end"><a href="/">Back to Home</a>&nbsp;&nbsp;<a href="/credit">go to credit</a></p>
-                <p>&copy; 2017–2024 Company, Inc. &middot; </p>
-                </footer>
-            </div>
-
-
+          <motion.div
+            className="timeline"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {educationData.map((edu, idx) => (
+              <motion.div key={idx} className="timeline-item" variants={itemVariants}>
+                <div className="timeline-icon"><FaGraduationCap /></div>
+                <div className="timeline-content">
+                  <h3>{edu.degree}</h3>
+                  <p className="university">{edu.university}</p>
+                  <span className="year">{edu.year}</span>
+                  <p className="details">{edu.details}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-    )
-}
+
+        {/* Projects */}
+        <div className="projects-container">
+          <motion.h2 initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
+            Project
+          </motion.h2>
+
+          <motion.div
+            className="project-list"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {projectsData.map((project, idx) => (
+              <motion.div key={idx} className="project-card" variants={itemVariants}>
+                <h3>{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+
+                <div className="tech-stack">
+                  {project.techStack.map((t, i) => (
+                    <span key={i} className="tech-tag">{t}</span>
+                  ))}
+                </div>
+
+                <div className="project-links">
+                  {project.githubLink && (
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <FaGithub /> GitHub
+                    </a>
+                  )}
+                  
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <hr className="featurette-divider" />
+
+      {/* Footer */}
+      <div className="container px-5">
+        <footer className="container">
+          <p className="float-end">
+            <a href="/">Back to Home</a>&nbsp;&nbsp;<a href="/credit">Go to Credit</a>
+          </p>
+          <p>&copy;Credit by Bootstrap&middot;</p>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
 export default About;

@@ -1,0 +1,16 @@
+/* App.css */
+.main-container {
+  display: flex;
+  justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+  align-items: flex-start; /* จัดให้ชิดบน */
+  gap: 20px; /* ระยะห่างระหว่าง Education และ Projects */
+  padding: 20px;
+  flex-wrap: wrap; /* ทำให้ responsive เมื่อหน้าจอแคบ */
+}
+
+/* แก้ไข CSS เดิมของ Education ให้จัดชิดขวาของตัวเอง */
+/* ใน Education.css */
+.education-container {
+  /* ... properties อื่นๆ ... */
+  margin: 40px auto 40px 0; /* เปลี่ยนเป็นแบบนี้เพื่อให้ชิดซ้ายใน Flexbox */
+}

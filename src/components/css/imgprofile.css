@@ -1,0 +1,14 @@
+
+:root { --profile-img-max: 320px; }
+
+
+/* ป้องกันรูปใหญ่เกินไป */
+.profile-img {
+  max-width: var(--profile-img-max);
+  height: auto;
+}
+@media (max-width: 576px) {
+  .profile-img {
+    max-width: 140px;
+  }
+}

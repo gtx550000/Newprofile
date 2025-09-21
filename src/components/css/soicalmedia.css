@@ -1,150 +1,128 @@
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
+/* list หลัก */
 .SocialMedia ul {
-  position: relative;
-  margin: 0;
-  padding: 0;
   display: flex;
-  flex-wrap: wrap; /* Default behavior: wrap icons */
-  justify-content: center; /* Center align icons */
-  padding-top: 30px;
-}
-
-.SocialMedia ul li {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 24px 0 0;
   list-style: none;
-  margin: 20px; /* Space between icons */
 }
 
+.SocialMedia ul li { margin: 0; padding: 0; }
+
+/* กรอบแต่ละไอคอน */
 .SocialMedia ul li a {
-  display: block;
   position: relative;
-  width: 120px; /* Larger size for icons */
-  height: 105px;
-  line-height: 120px;
-  font-size: 50px; /* Larger font size for icons */
-  text-align: center;
+  display: grid;
+  place-items: center;   /* กึ่งกลางทั้งแนวนอนและแนวตั้ง */
+  width: 100px;
+  height: 100px;
   text-decoration: none;
-  color: rgb(230, 230, 230);
-  transition: transform 0.3s, color 0.3s;
-  padding-top: 30px;
-  padding-right: 30px; 
+  color: #e6e6e6;
+  transition: transform .3s, color .3s;
 }
 
 .SocialMedia ul li a:hover {
-  transform: scale(1.3); /* Hover effect */
+  transform: scale(1.12);
 }
 
-.SocialMedia ul li a span {
+/* ========= เส้นเอฟเฟกต์ 4 ด้าน ========== */
+.SocialMedia ul li a > span:nth-child(-n+4) {
   position: absolute;
-  transition: transform 0.5s;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Horizontal and Vertical Lines for Hover Effect */
-.SocialMedia ul li a span:nth-child(1),
-.SocialMedia ul li a span:nth-child(3) {
-  width: 100%;
-  height: 4px;
-  background: rgb(150, 150, 150);
-}
-
-.SocialMedia ul li a span:nth-child(1) {
+/* เส้นบน */
+.SocialMedia ul li a > span:nth-child(1) {
   top: 0;
   left: 0;
+  right: 0;
+  height: 4px;
+  background: #bdbdbd;
   transform-origin: right;
 }
-
-.SocialMedia ul li a:hover span:nth-child(1) {
+.SocialMedia ul li a:hover > span:nth-child(1) {
   transform: scaleX(0);
   transform-origin: left;
 }
 
-.SocialMedia ul li a span:nth-child(3) {
+/* เส้นล่าง */
+.SocialMedia ul li a > span:nth-child(3) {
   bottom: 0;
   left: 0;
+  right: 0;
+  height: 4px;
+  background: #bdbdbd;
   transform-origin: left;
 }
-
-.SocialMedia ul li a:hover span:nth-child(3) {
+.SocialMedia ul li a:hover > span:nth-child(3) {
   transform: scaleX(0);
   transform-origin: right;
 }
 
-.SocialMedia ul li a span:nth-child(2),
-.SocialMedia ul li a span:nth-child(4) {
-  width: 4px;
-  height: 100%;
-  background: rgb(238, 238, 238);
-}
-
-.SocialMedia ul li a span:nth-child(2) {
+/* เส้นซ้าย */
+.SocialMedia ul li a > span:nth-child(2) {
   top: 0;
+  bottom: 0;
   left: 0;
-  transform: scale(0);
+  width: 4px;
+  background: #eeeeee;
+  transform: scaleY(0);
   transform-origin: bottom;
 }
-
-.SocialMedia ul li a:hover span:nth-child(2) {
-  transform: scale(1);
+.SocialMedia ul li a:hover > span:nth-child(2) {
+  transform: scaleY(1);
   transform-origin: top;
 }
 
-.SocialMedia ul li a span:nth-child(4) {
+/* เส้นขวา */
+.SocialMedia ul li a > span:nth-child(4) {
   top: 0;
+  bottom: 0;
   right: 0;
-  transform: scale(0);
+  width: 4px;
+  background: #eeeeee;
+  transform: scaleY(0);
   transform-origin: top;
 }
-
-.SocialMedia ul li a:hover span:nth-child(4) {
-  transform: scale(1);
+.SocialMedia ul li a:hover > span:nth-child(4) {
+  transform: scaleY(1);
   transform-origin: bottom;
 }
 
-.SocialMedia .facebook:hover {
-  color: #3b5998;
+/* ========= ไอคอนจริง (span สุดท้าย) ========== */
+.SocialMedia ul li a .fa,
+.SocialMedia ul li a .icon {
+  position: relative;
+  z-index: 1;
+  display: block;
+  line-height: 1;
+  font-size: 48px;
 }
 
-.SocialMedia .phone:hover {
-  color: rgb(17, 255, 69);
-}
+/* Hover สี */
+.SocialMedia .facebook:hover { color: #3b5998; }
+.SocialMedia .phone:hover    { color: #11ff45; }
+.SocialMedia .instagram:hover{ color: #ff1cce; }
+.SocialMedia .email-link:hover { color: #4081ff; }
 
-.SocialMedia .instagram:hover {
-  color: rgb(255, 28, 206);
-}
-
-.SocialMedia .linkedin:hover {
-  color: rgb(7, 247, 255);
-}
-
-/* Responsive Styles */
-@media (max-width: 576px) {
+/* ========= Responsive ========== */
+@media (max-width:576px){
   .SocialMedia ul {
-    display: grid; /* Switch to grid layout */
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 20px; /* Space between grid items */
-    padding: 20px;
-    justify-items: center; /* Center icons horizontally */
-    align-items: center; /* Center icons vertically */
+    gap: 24px;
+    padding: 16px 0 0;
   }
-
-  .SocialMedia ul li {
-    margin: 0; /* Remove extra margin for grid items */
-  }
-
   .SocialMedia ul li a {
-    width: 100px; /* Smaller size for icons */
-    height: 100px;
-    line-height: 100px;
-    font-size: 40px; /* Adjust font size */
-    padding-top: 30px;
-    padding-right: 30px; 
+    width: 90px;
+    height: 90px;
   }
-
-  .container1 {
-    display: flex;
-    justify-content: center; /* จัดกึ่งกลางแนวนอน */
-    align-items: center;     /* จัดกึ่งกลางแนวตั้ง */
-    height: 50px;           /* ให้เต็มหน้าจอในแนวตั้ง */
+  .SocialMedia ul li a .fa,
+  .SocialMedia ul li a .icon {
+    font-size: 40px;
   }
-
 }

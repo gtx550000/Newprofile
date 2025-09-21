@@ -1,0 +1,59 @@
+/* ====== Layout wrapper (วาง Education | Projects ข้างกัน) ====== */
+.about-sections{
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch; /* ให้กล่องยืดสูงเท่ากัน */
+}
+
+/* มือถือ/แท็บเล็ต: ซ้อนลง */
+@media (max-width: 1024px){
+  .about-sections{ grid-template-columns: 1fr; }
+}
+
+/* ====== กติกากล่องร่วม (ทำให้กล่องสองฝั่ง “เท่ากัน”) ====== */
+.education-container,
+.projects-container{
+  /* ยกเลิกค่าที่เคยทำให้เพี้ยน */
+  position: static !important;
+  left: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+
+  /* ตั้งค่าเดียวกันทั้งสองฝั่ง */
+  font-family: 'Kanit', sans-serif;
+  width: 100%;
+  height: 100%;              /* ยืดเต็มแถวของ grid */
+  display: flex;
+  flex-direction: column;    /* ให้เนื้อหาวางบนลงล่าง */
+  background-color: #f4f7f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  color: #333;
+  padding: 20px;
+}
+
+/* หัวเรื่องให้ margin/สไตล์เท่ากัน */
+.education-container h2,
+.projects-container h2{
+  text-align: center;
+  font-size: 2.0rem;
+  line-height: 1.2;
+  margin: 0 0 24px;
+  color: #2c3e50;
+  position: relative;
+}
+
+.education-container h2::after,
+.projects-container h2::after{
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #3498db;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
